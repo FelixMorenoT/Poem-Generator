@@ -27,7 +27,7 @@ public class UploadPoemProperties {
 	* @exception This method thorw an exception when the route doesn't exist.
 	*/
 	@SuppressWarnings("null")
-	public List<String> ReadProperties (String route) {
+	public List<String> ReadProperties(String route, String rowName) {
 		contentBuilder.setLength(0);
 		contentBuilderList = new ArrayList<String>();
 		
@@ -37,24 +37,24 @@ public class UploadPoemProperties {
 			fileReader = new FileReader(route);
 			bufferedReader = new BufferedReader(fileReader);
 			
-            while((propiertyText = bufferedReader.readLine()) != null) {
-            	contentBuilder.append(propiertyText);
+            while((propiertyText = ( bufferedReader).readLine()) != null) {
+            	  if  (propiertyText.startsWith(rowName) == true) {
+            		  contentBuilder.append(propiertyText);
+            	  }
             }  
             bufferedReader.close();
             
             propiertyText = contentBuilder.toString();
             
-            if  (propiertyText.contains("|") == true) {
-            	propiertyText = propiertyText.replace("|", ",");
-            }
-            
-            
-            arrayAux = propiertyText.split(",");
+            if  (propiertyText.contains("|") == true) propiertyText = propiertyText.replace("|", ",");
+          
+            arrayAux = propiertyText.split(":");
+            arrayAux = arrayAux[1].toString().split(",");
             
             for (String string : arrayAux) {
             	contentBuilderList.add(string);
 			}
-            
+   
             return contentBuilderList;
 		} catch (Exception e) {
 			contentBuilderList.add(e.toString());

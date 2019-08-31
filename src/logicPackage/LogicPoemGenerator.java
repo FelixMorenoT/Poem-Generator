@@ -26,29 +26,9 @@ public class LogicPoemGenerator {
 	/**
 	* This method is responsible to obtain the next rule to apply on the poem based on the grammatical rule.
 	* @param1 Grammatical rule.
-	* @param2 The list with all rules related with the grammatical rule in @Param1.
 	* @return The next rule based on @Param1.
 	*/
-	public static String GetPoemRule(String rulePoem, List<String> listConfigRule) {
-		String rule ="";
-		
-			switch(rulePoem) {
-				case "<NOUN>":
-					rule = listConfigRule.get(LogicPoemGenerator.GetRandomNumber(0, listConfigRule.size()-1));
-					break;
-				case "<PREPOSITION>":
-					rule = listConfigRule.get(LogicPoemGenerator.GetRandomNumber(0, listConfigRule.size()-1));
-					break;
-				case "<PRONOUN>":
-					rule = listConfigRule.get(LogicPoemGenerator.GetRandomNumber(0, listConfigRule.size()-1));
-					break;
-				case "<VERB>":
-					rule = listConfigRule.get(LogicPoemGenerator.GetRandomNumber(0, listConfigRule.size()-1));
-					break;
-				case "<ADJECTIVE>":
-					rule = listConfigRule.get(LogicPoemGenerator.GetRandomNumber(0, listConfigRule.size()-1));
-					break;
-		}
-		return rule;
+	public static String GetPoemRule(List<String> listConfigRule) {
+		return listConfigRule.get(LogicPoemGenerator.GetRandomNumber(0, listConfigRule.size()-1));
 	}
 }

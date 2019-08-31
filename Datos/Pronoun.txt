@@ -1,1 +1,1 @@
-my,your,his,her
+my|your|his|her

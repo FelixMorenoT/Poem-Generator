@@ -90,20 +90,20 @@ public class MainPoemGenerator {
 		
 		String stringLine = "";
 		String lineIndicator = "";
-
-			listAdjective = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Adjective.txt");
-			listNoun = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Noun.txt");
-			listPreposition = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Preposition.txt");
-			listPronoun = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Pronoun.txt");
-			listVerb = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Verb.txt");
 		
-			listConfigLine = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Config\\1-ConfigLine.txt");
-			listConfigAdjective = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Config\\6-ConfigAdjective.txt");
-			listConfigNoun = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Config\\2-ConfigNoun.txt");
-			listConfigPreposition = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Config\\5-ConfigPrepostion.txt");
-			listConfigPronoun = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Config\\3-ConfigPronoun.txt");
-			listConfigVerb = uploadPoemProperties.ReadProperties("..\\Poem Generator\\Datos\\Config\\4-ConfigVerb.txt");
-	
+			listAdjective = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Adjective");
+			listNoun = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Noun");
+			listPreposition = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Preposition");
+			listPronoun = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Pronoun");
+			listVerb = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Verb");
+			
+			listConfigLine = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CLine");
+			listConfigAdjective = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CAdjective");
+			listConfigNoun = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CNoun");
+			listConfigPreposition = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CPreposition");
+			listConfigPronoun = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CPronoun");
+			listConfigVerb = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CVerb");
+		 				
 		for (int i = 0; i <5; i++) {
 			stringLine="";
 			lineIndicator = listConfigLine.get(LogicPoemGenerator.GetRandomNumber(0, listConfigLine.size()-1));
@@ -112,28 +112,28 @@ public class MainPoemGenerator {
 			while(!lineExit.equals("$END")) {
 				switch (lineExit) {
 					case "<NOUN>":
-						stringLine +=  listNoun.get(LogicPoemGenerator.GetRandomNumber(0, listNoun.size()-1)) + " ";
-						lineExit = LogicPoemGenerator.GetPoemRule("<NOUN>",listConfigNoun);
+						stringLine +=  listNoun.get(logicPoemGenerator.GetRandomNumber(0, listNoun.size()-1)) + " ";
+						lineExit = LogicPoemGenerator.GetPoemRule(listConfigNoun);
 						break;
 						
 					case "<PREPOSITION>":
 						stringLine +=  listPreposition.get(logicPoemGenerator.GetRandomNumber(0, listPreposition.size()-1)) + " ";
-						lineExit = LogicPoemGenerator.GetPoemRule("<PREPOSITION>",listConfigPreposition);
+						lineExit = LogicPoemGenerator.GetPoemRule(listConfigPreposition);
 						break;
 						
 					case "<PRONOUN>":
 						stringLine +=  listPronoun.get(logicPoemGenerator.GetRandomNumber(0, listPronoun.size()-1)) + " ";
-						lineExit = LogicPoemGenerator.GetPoemRule("<PRONOUN>",listConfigPronoun);
+						lineExit = LogicPoemGenerator.GetPoemRule(listConfigPronoun);
 						break;
 						
 					case "<VERB>":
-						stringLine +=  listVerb.get(LogicPoemGenerator.GetRandomNumber(0, listVerb.size()-1)) + " ";
-						lineExit = LogicPoemGenerator.GetPoemRule("<VERB>",listConfigVerb);
+						stringLine +=  listVerb.get(logicPoemGenerator.GetRandomNumber(0, listVerb.size()-1)) + " ";
+						lineExit = LogicPoemGenerator.GetPoemRule(listConfigVerb);
 						break;
 						
 					case "<ADJECTIVE>":	
 						stringLine +=  listAdjective.get(logicPoemGenerator.GetRandomNumber(0, listAdjective.size()-1)) + " ";
-						lineExit = LogicPoemGenerator.GetPoemRule("<ADJECTIVE>",listConfigAdjective);
+						lineExit = LogicPoemGenerator.GetPoemRule(listConfigAdjective);
 						break;	
 				}
 				

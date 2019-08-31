@@ -1,1 +1,1 @@
-black,white,dark,light,bright,murky,muddy,clear
+black|white|dark|light|bright|murky|muddy|clear
