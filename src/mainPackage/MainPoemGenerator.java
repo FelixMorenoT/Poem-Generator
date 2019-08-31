@@ -5,24 +5,84 @@ import java.util.List;
 
 import logicPackage.LogicPoemGenerator;
 import logicPackage.UploadPoemProperties;
+/**
+* This the Main Class to handle all the project.
+* 
+* @author Felix Rafael Moreno Tabares
+* @version V1.0.0
+* Git - https://github.com/FelixMorenoT
+* 
+*/
 
 public class MainPoemGenerator {
-	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listAdjective = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listNoun = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listPreposition = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listPronoun = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listVerb = new ArrayList<String>();
 	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listConfigLine = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listConfigAdjective = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listConfigNoun = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listConfigPreposition = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listConfigPronoun = new ArrayList<String>();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static List<String> listConfigVerb = new ArrayList<String>();
-
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static UploadPoemProperties uploadPoemProperties = new UploadPoemProperties();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static LogicPoemGenerator logicPoemGenerator = new LogicPoemGenerator();
+	
+	/**
+	 * The public name of a hero that is common knowledge
+	 */
 	public static String lineExit = "";
 	
 	@SuppressWarnings("static-access")
