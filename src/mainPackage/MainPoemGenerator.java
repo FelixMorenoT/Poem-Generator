@@ -16,72 +16,72 @@ import logicPackage.UploadPoemProperties;
 
 public class MainPoemGenerator {
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all the Adjectives for the poem.
 	 */
 	public static List<String> listAdjective = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all the Nouns for the poem.
 	 */
 	public static List<String> listNoun = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all the Prepositions for the poem.
 	 */
 	public static List<String> listPreposition = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all the Pronouns for the poem.
 	 */
 	public static List<String> listPronoun = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all the Verbs for the poem.
 	 */
 	public static List<String> listVerb = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all line configuration.
 	 */
 	public static List<String> listConfigLine = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all adjectives configuration.
 	 */
 	public static List<String> listConfigAdjective = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all nouns configuration.
 	 */
 	public static List<String> listConfigNoun = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all prepositions configuration.
 	 */
 	public static List<String> listConfigPreposition = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all pronouns configuration.
 	 */
 	public static List<String> listConfigPronoun = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to Save all verbs configuration.
 	 */
 	public static List<String> listConfigVerb = new ArrayList<String>();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 *  Public Variable assign to contains all the method of the UploadPoemProperties class.
 	 */
 	public static UploadPoemProperties uploadPoemProperties = new UploadPoemProperties();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 *  Public Variable assign to contains all the method of the LogicPoemGenerator class.
 	 */
 	public static LogicPoemGenerator logicPoemGenerator = new LogicPoemGenerator();
 	
 	/**
-	 * The public name of a hero that is common knowledge
+	 * Public Variable assign to contains the grammatical rule.
 	 */
 	public static String lineExit = "";
 	
