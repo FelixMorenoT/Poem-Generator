@@ -1,0 +1,1 @@
+runs,walks,stands,climbs,crawls,flows,flies,transcends,ascends,descends,sinks

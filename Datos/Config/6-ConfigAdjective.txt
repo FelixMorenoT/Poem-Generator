@@ -1,0 +1,1 @@
+<NOUN>|<ADJECTIVE>|$END
