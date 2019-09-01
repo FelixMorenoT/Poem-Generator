@@ -71,6 +71,11 @@ public class MainPoemGenerator {
 	public static List<String> listConfigVerb = new ArrayList<String>();
 	
 	/**
+	 * Public Variable assign to Save the number of Lines.
+	 */
+	public static List<String> listConfigPoem = new ArrayList<String>();
+	
+	/**
 	 *  Public Variable assign to contains all the method of the UploadPoemProperties class.
 	 */
 	public static UploadPoemProperties uploadPoemProperties = new UploadPoemProperties();
@@ -91,20 +96,26 @@ public class MainPoemGenerator {
 		String stringLine = "";
 		String lineIndicator = "";
 		
-			listAdjective = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Adjective");
-			listNoun = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Noun");
-			listPreposition = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Preposition");
-			listPronoun = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Pronoun");
-			listVerb = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"Verb");
-			
-			listConfigLine = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CLine");
-			listConfigAdjective = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CAdjective");
-			listConfigNoun = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CNoun");
-			listConfigPreposition = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CPreposition");
-			listConfigPronoun = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CPronoun");
-			listConfigVerb = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","CVerb");
-		 				
-		for (int i = 0; i <5; i++) {
+		listConfigPoem = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","POEM",1);
+		
+		listConfigLine = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","LINE",1);
+		
+		listAdjective = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"ADJECTIVE",0);	
+		listConfigAdjective = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","ADJECTIVE",1);
+
+		listNoun = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"NOUN",0);
+		listConfigNoun = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","NOUN",1);
+		
+		listPronoun = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"PRONOUN",0);
+		listConfigPronoun = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","PRONOUN",1);
+		
+		listVerb = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"VERB",0);
+		listConfigVerb = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","VERB",1);
+		
+		listPreposition = uploadPoemProperties.ReadProperties(("..\\Poem Generator\\Datos\\GrammaticalRules.txt"),"PREPOSITION",0);
+		listConfigPreposition = uploadPoemProperties.ReadProperties("..\\\\Poem Generator\\\\Datos\\\\GrammaticalRules.txt","PREPOSITION",1);
+ 				
+		for (int i = 0; i <listConfigPoem.size(); i++) {
 			stringLine="";
 			lineIndicator = listConfigLine.get(LogicPoemGenerator.GetRandomNumber(0, listConfigLine.size()-1));
 			lineExit = lineIndicator;

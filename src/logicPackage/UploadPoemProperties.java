@@ -27,7 +27,7 @@ public class UploadPoemProperties {
 	* @exception This method thorw an exception when the route doesn't exist.
 	*/
 	@SuppressWarnings("null")
-	public List<String> ReadProperties(String route, String rowName) {
+	public List<String> ReadProperties(String route, String rowName, int sizeRow) {
 		contentBuilder.setLength(0);
 		contentBuilderList = new ArrayList<String>();
 		
@@ -45,16 +45,38 @@ public class UploadPoemProperties {
             bufferedReader.close();
             
             propiertyText = contentBuilder.toString();
-            
-            if  (propiertyText.contains("|") == true) propiertyText = propiertyText.replace("|", ",");
-          
             arrayAux = propiertyText.split(":");
-            arrayAux = arrayAux[1].toString().split(",");
             
+            switch(rowName) {
+            case "POEM":
+            	if  (arrayAux[sizeRow].contains(" ") == true) arrayAux[sizeRow] = arrayAux[sizeRow].replace(" ", ",");
+            	arrayAux = arrayAux[sizeRow].toString().split(",");
+            	break;
+            case "LINE":
+            	if  (arrayAux[sizeRow].contains(" ") == true) arrayAux[sizeRow] = arrayAux[sizeRow].replace(" ", "%");
+            	if  (arrayAux[sizeRow].contains("|") == true) arrayAux[sizeRow] = arrayAux[sizeRow].replace("|", ",");
+            	arrayAux = arrayAux[sizeRow].toString().split("%");
+            	arrayAux = arrayAux[sizeRow].toString().split(",");
+            	break;
+            default:
+            	if  (arrayAux[1].contains(" ") == true) arrayAux[1] = arrayAux[1].replace(" ", "%");
+            	arrayAux = arrayAux[1].toString().split("%");
+            	
+            	if (sizeRow==0) {
+            		if  (arrayAux[sizeRow+1].contains("|") == true) arrayAux[sizeRow+1] = arrayAux[sizeRow+1].replace("|", ",");
+            		arrayAux = arrayAux[sizeRow+1].toString().split(",");
+            		break;
+            	}else {
+            		if  (arrayAux[sizeRow+1].contains("|") == true) arrayAux[sizeRow+1] = arrayAux[sizeRow+1].replace("|", ",");
+            		arrayAux = arrayAux[sizeRow+1].toString().split(",");
+            		break;
+            	}
+            }
+
             for (String string : arrayAux) {
-            	contentBuilderList.add(string);
+            	if (!string.equals(""))contentBuilderList.add(string.trim());
 			}
-   
+
             return contentBuilderList;
 		} catch (Exception e) {
 			contentBuilderList.add(e.toString());
